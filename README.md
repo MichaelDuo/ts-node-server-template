@@ -1,0 +1,2 @@
+# ts-template
+typescript template
