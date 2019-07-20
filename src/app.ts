@@ -1,10 +1,12 @@
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import * as routers from './routers';
+import accessLog from './middlewares/accessLog';
 
 const app = new Koa();
 
-app.use(bodyParser())
+app.use(accessLog())
+	.use(bodyParser())
 	.use(routers.insecure.routes())
 	.use(routers.insecure.allowedMethods())
 	.use(routers.secure.routes())
