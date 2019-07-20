@@ -2,8 +2,9 @@ import http from 'http';
 import bootstrap from './bootstrap';
 import app from './app';
 import logger from './utils/logger';
+import config from 'config';
 
-const port = 3000;
+const port = config.get('PORT');
 
 async function main(): Promise<any> {
 	await bootstrap();
