@@ -8,7 +8,7 @@
 		"build": "tsc",
 		"dev": "nodemon",
 		"exec": "ts-node src/index.ts",
-		"test": "jest"
+		"test": "jest --forceExit"
 	},
 	"repository": {
 		"type": "git",
@@ -58,10 +58,5 @@
 		"prettier": "^1.19.1",
 		"ts-jest": "^26.4.3",
 		"ts-node": "^8.10.2"
-	},
-	"husky": {
-		"hooks": {
-			"pre-push": "npm test"
-		}
 	}
 }

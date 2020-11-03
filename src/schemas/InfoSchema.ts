@@ -1,6 +1,5 @@
 import {makeExecutableSchema} from '@graphql-tools/schema';
 import InfoService from '../services/InfoService';
-import User from '../models/user';
 
 const typeDef = `
     type Query {
