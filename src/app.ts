@@ -6,12 +6,14 @@ import responseTime from 'koa-response-time';
 import errorHandler from './middlewares/errorHandler';
 import notFoundHandler from './middlewares/notFoundHandler';
 import bodyDecorator from './middlewares/bodyDecorator';
+import graphql from './graphql';
 
 const app = new Koa();
 
 app.use(accessLog())
 	.use(responseTime())
 	.use(errorHandler())
+	.use(graphql())
 	.use(bodyParser())
 	.use(bodyDecorator())
 	.use(routers.insecure.routes())
