@@ -8,8 +8,6 @@ export default (): Koa.Middleware =>
 		});
 		try {
 			await next();
-		} catch (e) {
-			throw e;
 		} finally {
 			logger.info({
 				message: `--> ${ctx.method} ${ctx.status} ${ctx.path} ${ctx.length}`,

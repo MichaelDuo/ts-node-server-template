@@ -11,7 +11,10 @@ export default (): Koa.Middleware =>
 		} catch (e) {
 			ctx.status = 500;
 			ctx.body = {
-				meta: {code: 500, message: '500: Internal Server Error'},
+				meta: {
+					code: 500,
+					message: e.message || '500: Internal Server Error',
+				},
 				data: {},
 			};
 
@@ -32,6 +35,7 @@ export default (): Koa.Middleware =>
 				},
 			};
 
-			logger.error(errObj);
+			console.log(e);
+			return;
 		}
 	};
